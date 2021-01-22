@@ -22,11 +22,6 @@ public class CityServiceImpl implements CityService {
     }
 
     @Override
-    public City getCityByName(String name) {
-        return cityDAO.getCityByName(name);
-    }
-
-    @Override
     @Transactional
     public void saveCities(City city) {
         cityDAO.saveCities(city);
@@ -42,6 +37,10 @@ public class CityServiceImpl implements CityService {
     @Transactional
     public void deleteCity(int id) {
         cityDAO.deleteCity(id);
+    }
 
+        @Override
+    public City getCityByName(String name) {
+        return cityDAO.getCityByName(name);
     }
 }

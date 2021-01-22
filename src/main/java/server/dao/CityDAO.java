@@ -5,13 +5,13 @@ import server.entity.City;
 import java.util.List;
 
 public interface CityDAO {
-    public List<City> getAllCities();
+    List<City> getAllCities();
 
     City getCityByName(String name);
 
-    public void saveCities(City city);
+    void saveCities(City city);
 
-    public City getCity(int id);
+    City getCity(int id);
 
-    public  void deleteCity(int id);
+    void deleteCity(int id);
 }

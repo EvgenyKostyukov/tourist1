@@ -35,7 +35,7 @@ public class MyRESTController {
         return city;
     }
 
-    @GetMapping("/cities")
+    @GetMapping("api/city")
     public City getCity(@RequestParam String name) {
         City city = cityService.getCityByName(name);
 
@@ -44,25 +44,6 @@ public class MyRESTController {
                     name + " in  Database");
         }
         return city;
-    }
-
-    @ExceptionHandler
-    public ResponseEntity<CityIncorrectData> handleException(
-            NoSuchCityException exception) {
-        CityIncorrectData data = new CityIncorrectData();
-        data.setInfo(exception.getMessage() );
-
-        return new ResponseEntity<>(data, HttpStatus.NOT_FOUND);
-    }
-
-
-    @ExceptionHandler
-    public ResponseEntity<CityIncorrectData> handleException(
-            Exception exception) {
-        CityIncorrectData data = new CityIncorrectData();
-        data.setInfo(exception.getMessage() );
-
-        return new ResponseEntity<>(data, HttpStatus.BAD_REQUEST);
     }
 
 @PostMapping("/cities")
@@ -90,5 +71,27 @@ public City updateCity(@RequestBody City city){
         return "City with ID = " + id + " was deleted";
 
 }
+
+
+
+    @ExceptionHandler
+    public ResponseEntity<CityIncorrectData> handleException(
+            NoSuchCityException exception) {
+        CityIncorrectData data = new CityIncorrectData();
+        data.setInfo(exception.getMessage() );
+
+        return new ResponseEntity<>(data, HttpStatus.NOT_FOUND);
+    }
+
+
+    @ExceptionHandler
+    public ResponseEntity<CityIncorrectData> handleException(
+            Exception exception) {
+        CityIncorrectData data = new CityIncorrectData();
+        data.setInfo(exception.getMessage() );
+
+        return new ResponseEntity<>(data, HttpStatus.BAD_REQUEST);
+    }
+
 
 }

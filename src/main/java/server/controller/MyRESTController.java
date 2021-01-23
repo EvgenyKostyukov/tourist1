@@ -46,6 +46,7 @@ public class MyRESTController {
         return city;
     }
 
+
 @PostMapping("/cities")
     public City addNewCity(@RequestBody City city){
         cityService.saveCities(city);

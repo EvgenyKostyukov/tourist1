@@ -3,7 +3,7 @@ package server.entity;
 import javax.persistence.*;
 
 @Entity
-    @Table(name="City")
+    @Table(name= "city")
     public class City {
 
         @Id

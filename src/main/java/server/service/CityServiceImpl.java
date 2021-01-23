@@ -39,8 +39,10 @@ public class CityServiceImpl implements CityService {
         cityDAO.deleteCity(id);
     }
 
-        @Override
+    @Override
+    @Transactional
     public City getCityByName(String name) {
         return cityDAO.getCityByName(name);
+
     }
 }

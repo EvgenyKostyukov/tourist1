@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 
-import javax.transaction.Transactional;
+
 import java.util.List;
 
 @Repository
@@ -25,6 +25,14 @@ public class CityDAOImpl implements CityDAO {
                 City.class);
         List<City> allCity = query.getResultList();
         return allCity;
+    }
+
+    @Override
+    public City getCityByName(String name) {
+        Session session = sessionFactory.getCurrentSession();
+        Query<City> query = session.createQuery("from City where city.city = 'Minsk'",
+                City.class);
+        return query.getSingleResult();
     }
 
     @Override
@@ -50,12 +58,6 @@ public class CityDAOImpl implements CityDAO {
         query.executeUpdate();
     }
 
-        @Override
-    public City getCityByName(String name) {
-        Session session = sessionFactory.getCurrentSession();
-        Query<City> query = session.createQuery("from City where name =" + name,
-                City.class);
-        return query.getSingleResult();
-    }
+
 }
 

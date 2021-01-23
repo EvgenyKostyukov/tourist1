@@ -21,18 +21,18 @@ public class Bot extends TelegramLongPollingBot {
         SendMessage sendMessage = new SendMessage().setChatId(update.getMessage().getChatId());
 
 
-//        City city = cityService.getCityByName(update.getMessage().getText());
-//        if (update.getMessage().getText().equals(city)) {
-//            sendMessage.setText("2");
-//        }
 
-
-        City city = cityService.getCityByName(update.getMessage().getText());
-        if (city != null) {
-            sendMessage.setText(city.getInfo());
-        } else {
-            sendMessage.setText("Некорректный ввод!");
+        if (update.getMessage().getText().equals("1")) {
+            sendMessage.setText("2");
         }
+
+
+//        City city = cityService.getCityByName(update.getMessage().getText());
+//        if (city != null) {
+//            sendMessage.setText(city.getInfo());
+//        } else {
+//            sendMessage.setText("Некорректный ввод!");
+//        }
 
 
         try {

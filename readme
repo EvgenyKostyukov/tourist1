@@ -1,0 +1,9 @@
+This is a test travel telegram bot that provides information on the country entered by the user.
+So far, there are only 4 cities in the database for the test:
+"Минск", "Москва", "Варшава", "Киев".
+Over time, the bot will improve and expand.
+The bot is temporarily not connected to the remote server, so it works only for localhost.
+Required to run:
+Pull up dependencies from pomfile
+Bot nickname: @BestTouristBot
+Bot token: 1529852801: AAELj5FDxkz65oHZ4c8OcvY72G5COJ5uohc

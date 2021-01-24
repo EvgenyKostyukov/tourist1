@@ -15,7 +15,7 @@ public interface ICityService {
 
     void deleteCityById(Long id);
 
-//    void createCity(String name, String info);
+//    <String extends City> String createCity (String info);
 
 
 

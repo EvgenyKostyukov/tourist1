@@ -2,6 +2,7 @@ package com.eugene.bot;
 
 import com.eugene.model.City;
 import com.eugene.service.ICityService;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -10,6 +11,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.Optional;
 
+@EnableScheduling
 @Component
 public class TouristBot extends TelegramLongPollingBot {
 

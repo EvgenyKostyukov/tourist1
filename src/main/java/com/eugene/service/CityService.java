@@ -2,7 +2,13 @@ package com.eugene.service;
 
 import com.eugene.model.City;
 import com.eugene.repository.CityRepository;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
@@ -33,16 +39,45 @@ public class CityService implements ICityService {
     }
 
     @Override
-    public void deleteCityById(Long id){
+    public void deleteCityById(Long id) {
         cityRepository.deleteById(id);
     }
 
+    @Override
+    public String saveCity(City city) {
+        City  savedCity = cityRepository.save(city);
+        if(savedCity!=null){
+            return "Saved";
+        }else {
+
+        }
+        return "Failed";
+    }
+
+
+}
+
 //    @Override
-//    public void createCity(String name, String info) {
-//        cityRepository.save(name,info);
+//    public void saveCities(City city) {
+//        ICityService.saveCities(city);
+//    }
+
+
+//    @Override
+//    public City createCity(City city) {
+//        return cityRepository.save(city);
+//    }
+//}
+
+//    @Override
+//    public City createCity(City city) {
+//       return null;
+//    }
+
+//    @Override
+//    public void createCity(City city) {
+//        cityRepository.createCity(city);
 //    }
 
 
 
-
-}

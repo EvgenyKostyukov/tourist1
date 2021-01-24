@@ -38,17 +38,24 @@ public class CityController {
         return "Delete city with id=" + id;
     }
 
-    //добавление города по имени и инфо
-    @PostMapping("/city")
-    public String createCity(@QueryParam("name") String name, @QueryParam("info") String info) {
-        //return cityService
-        return "Create city with name=" + name + " and info=" + info;
+    @PostMapping(path="/saveCity")
+    public String saveCity(@RequestBody City city){
+        return cityService.saveCity(city);
     }
+
 }
 
+//    добавление города по имени и инфо
+//    @PostMapping("/city")
+//    public String createCity(@QueryParam("name") String name, @QueryParam("info") String info) {
+//        City city = new City("name", "info");
+//        return "Create city with name=" + name + " and info=" + info;
+//    }
 
-//    @Autowired
-//    private CityService cityService;
+
+
+
+
 //
 //    @GetMapping("/cities")
 //    public List<City> showAllCities() {

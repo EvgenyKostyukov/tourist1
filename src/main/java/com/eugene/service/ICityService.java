@@ -15,9 +15,18 @@ public interface ICityService {
 
     void deleteCityById(Long id);
 
-//    <String extends City> String createCity (String info);
+//    void saveCities(City city);
+
+    String saveCity(City city);
+
+//    void saveCities(City city);
+
+//    City createCity(City city);
+
+//    <S extends City> S createCity (S city, S info);
 
 
+//    void createCity(City city);
 
 
 

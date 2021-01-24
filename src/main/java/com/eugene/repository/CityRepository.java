@@ -8,14 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface CityRepository extends CrudRepository<City, Long> {
-
-
     Optional<City> findCityByCity(String city);
-
-
-
-
-//    void deleteCityByCity(String name);
-
-
 }

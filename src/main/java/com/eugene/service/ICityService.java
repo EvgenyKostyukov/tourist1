@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ICityService {
-
     List<City> getCities();
 
     Optional<City> getCityById(Long id);
@@ -15,20 +14,5 @@ public interface ICityService {
 
     void deleteCityById(Long id);
 
-//    void saveCities(City city);
-
-    String saveCity(City city);
-
-//    void saveCities(City city);
-
-//    City createCity(City city);
-
-//    <S extends City> S createCity (S city, S info);
-
-
-//    void createCity(City city);
-
-
-
-
+    City saveCity(City city);
 }

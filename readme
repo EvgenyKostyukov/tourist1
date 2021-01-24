@@ -1,5 +1,5 @@
 This is a test travel telegram bot that provides information on the country entered by the user.
-So far, there are only 4 cities in the database for the test:
+So far, there are only a few cities in the database:
 "Минск", "Москва", "Варшава", "Киев", "Рига".
 Over time, the bot will improve and expand.
 The bot is temporarily not connected to the remote server, so it works only for localhost.

@@ -2,6 +2,7 @@ package com.eugene.bot;
 
 import com.eugene.model.City;
 import com.eugene.service.ICityService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -14,18 +15,24 @@ import java.util.Optional;
 public class TouristBot extends TelegramLongPollingBot {
     private final ICityService cityService;
 
+    @Value("${bot.username}")
+    private String username;
+
+    @Value("${bot.token}")
+    private String token;
+
     public TouristBot(ICityService cityService) {
         this.cityService = cityService;
     }
 
     @Override
     public String getBotUsername() {
-        return "@BestTouristBot";
+        return username;
     }
 
     @Override
     public String getBotToken() {
-        return "1529852801:AAELj5FDxkz65oHZ4c8OcvY72G5COJ5uohc";
+        return token;
     }
 
     @Override

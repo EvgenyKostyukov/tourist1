@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.eugene.Application
+web: java $JAVA_OPTS -jar target/tourist1.jar com.eugene.Application

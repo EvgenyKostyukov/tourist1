@@ -4,6 +4,7 @@ import com.eugene.model.City;
 import com.eugene.service.ICityService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,15 +23,18 @@ public class CityController {
     }
 
     @GetMapping("/city/{id}")
-    public City getCityById(@PathVariable Long id) {
+    public Response getCityById(@PathVariable Long id) {
         Optional<City> city = cityService.getCityById(id);
-        return city.orElse(null);
+        if (city.isPresent()) {
+            return Response.status(Response.Status.OK).entity(city).build();
+        } else {
+            return Response.status(Response.Status.NOT_FOUND).entity("Города с таким айди нет").build();
+        }
     }
 
     @DeleteMapping("/city/{id}")
-    public String deleteCityById(@PathVariable Long id) {
+    public void deleteCityById(@PathVariable Long id) {
         cityService.deleteCityById(id);
-        return "Delete city with id=" + id;
     }
 
     @PostMapping("/saveCity")

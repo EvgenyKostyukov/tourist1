@@ -1,10 +1,23 @@
-This is a telegram travel bot test that provides information about the current country.
-There are only a few cities in the database so far:
-«Минск», «Москва», «Варшава», «Киев», «Рига», «Пекин».
-Over time, the bot will improve and expand.
-The bot is temporarily not connected to the remote server.
-Required to run:
-Application launch class
-Raise pomfile dependencies
+Hello!
+This is a Telegram bot repository with a simple interface, but with an interesting backend implementation that displays information about the sights of the entered city by name.
+Technologies used: Java 15, SpringBoot, SpringMVC, SpringData, PostgreSQL, Hibernate, Maven, GIT.
+The bot implements REST WebService.
+While there are several cities in the database:
+«Минск», «Москва», «Варшава», «Киев», «Рига», «Пекин», «Вильнюс» .
+The bot is configured to run it either on a local server or on a remote server.
+The bot is deployed for hosting Heroku (free tariff), so to wake up the bot, you need to send a GET request in the browser "https://touristtestbot.herokuapp.com/api/cities"
 Bot nickname: @BestTouristBot
 Bot token: 1529852801: AAELj5FDxkz65oHZ4c8OcvY72G5COJ5uohc
+
+Required to run (remote server):
+- telegram account
+- find a bot by nickname "@BestTouristBot"
+- send a GET request in the browser to wake up the bot "https://touristtestbot.herokuapp.com/api/cities"
+-start testing by entering cities with a capital letter in Russian, for example «Москва».
+
+Required to run (local server):
+- telegram account
+- find a bot by nickname "@BestTouristBot"
+- import bot repository from github
+- pull up pomfile dependencies
+- run the application class
